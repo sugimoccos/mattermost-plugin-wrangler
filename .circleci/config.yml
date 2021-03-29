@@ -19,17 +19,34 @@ jobs:
       - checkout
       - run: make test
 
+  build:
+    executer:
+      name: default
+    steps:
+      - checkout
+      - run: make dist
+      - store_artifacts:
+        path: dist/com.mattermost.wrangler-0.6.1.tar.gz
+        destination: com.mattermost.wrangler-0.6.1.tar.gz
+      
+
 workflows:
   version: 2
   untagged-build:
     jobs:
-      - lint:
+      - build:
         filters:
           branches:
             only:
               - force-channel
-      - test:
-        filters:
-          branches:
-            only:
-              - force-channel
+      #- lint:
+      #  filters:
+      #    branches:
+      #      only:
+      #        - force-channel
+      #- test:
+      #  filters:
+      #    branches:
+      #      only:
+      #        - force-channel
+
