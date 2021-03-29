@@ -41,7 +41,7 @@ func getHelp() string {
 
 func getCommand(autocomplete bool) *model.Command {
 	return &model.Command{
-		//Trigger:          "wrangler",
+		//Trigger:          "wrangler", // test
 		Trigger:          "knowhow",
 		//DisplayName:      "Wrangler",
 		DisplayName:      "Knowhow",
