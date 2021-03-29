@@ -23,8 +23,12 @@ workflows:
   version: 2
   untagged-build:
     jobs:
-      - lint
-      - test
+      - lint:
+        filters:
+          branches:
+            only:
+              - force-channel
+      - test:
         filters:
           branches:
             only:
