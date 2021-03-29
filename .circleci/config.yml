@@ -25,3 +25,7 @@ workflows:
     jobs:
       - lint
       - test
+        filters:
+          branches:
+            only:
+              - force-channel
