@@ -20,3 +20,8 @@ jobs:
 
     - name: Build
       run: make dist
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: com.mattermost.wrangler-0.6.1.tar.gz
+        path: dist/com.mattermost.wrangler-0.6.1.tar.gz
